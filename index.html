@@ -146,9 +146,91 @@
   .outro h2{margin:10px 0 12px}
   .outro p{color:var(--soft);max-width:520px;margin:0 auto}
   footer{text-align:center;color:#c3b4b0;font-size:.82rem;padding:34px 0 50px}
+
+  /* --- flashy + fun additions --- */
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:60}
+  .mutebtn{position:fixed;top:14px;right:14px;z-index:70;border:0;cursor:pointer;
+    width:44px;height:44px;border-radius:50%;font-size:1.15rem;background:rgba(255,255,255,.85);
+    box-shadow:var(--shadow);backdrop-filter:blur(6px);transition:transform .15s}
+  .mutebtn:active{transform:scale(.9)}
+  /* button shimmer */
+  .demo .btn{position:relative;overflow:hidden}
+  .demo .btn::after{content:"";position:absolute;top:0;left:-60%;width:50%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);
+    transform:skewX(-20deg);animation:shimmer 2.6s ease-in-out infinite}
+  @keyframes shimmer{0%{left:-60%}55%,100%{left:130%}}
+  /* progress bar */
+  .pbar{height:8px;border-radius:6px;background:#46406a;margin-top:14px;overflow:hidden}
+  .pbar i{display:block;height:100%;width:0;border-radius:6px;
+    background:linear-gradient(90deg,#ffd28a,#ff9a8b,#9fd8c4);background-size:200% 100%;
+    transition:width .55s cubic-bezier(.3,.8,.3,1);animation:slide 2s linear infinite}
+  @keyframes slide{to{background-position:200% 0}}
+  /* bouncy step */
+  .demo .steps li.show{animation:pop .4s cubic-bezier(.3,1.5,.5,1)}
+  @keyframes pop{0%{transform:scale(.8) translateX(-8px);opacity:0}60%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
+  .demo .steps li.run .mk{box-shadow:0 0 0 0 rgba(255,210,138,.7);animation:spin 1s linear infinite, pulse 1s ease-out infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,210,138,.6)}100%{box-shadow:0 0 0 10px rgba(255,210,138,0)}}
+  .final.show{animation:popbig .5s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes popbig{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.12)}100%{transform:scale(1);opacity:1}}
+  /* count pop */
+  .stat .n.pop{animation:numpop .5s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes numpop{0%{transform:scale(1)}45%{transform:scale(1.28);color:#ff9a8b}100%{transform:scale(1)}}
+  /* VM 원룸 illustration */
+  .vmbox{margin:10px auto 14px;max-width:300px}
+  .vmreal{text-align:center;font-weight:800;font-size:.86rem;color:var(--soft);margin-bottom:8px}
+  .vmrooms{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:#7ec4e8;padding:11px;border-radius:14px}
+  .vmroom{background:#fff;border-radius:9px;padding:14px 6px 9px;text-align:center;font-size:1.45rem;box-shadow:var(--shadow);position:relative;animation:roomglow 4s ease-in-out infinite}
+  .vmroom:nth-child(2){animation-delay:1s}.vmroom:nth-child(3){animation-delay:2s}.vmroom:nth-child(4){animation-delay:3s}
+  @keyframes roomglow{0%,100%{box-shadow:var(--shadow)}50%{box-shadow:0 0 0 3px #ffd28a}}
+  .vmroom small{display:block;font-size:.66rem;color:var(--soft);font-weight:700;margin-top:3px}
+  .vmroom::after{content:"🔒";position:absolute;top:4px;right:5px;font-size:.62rem}
+  /* hotplug mini bar */
+  .rambar{display:flex;gap:3px;margin-top:12px;align-items:center}
+  .rambar i{flex:1;height:11px;border-radius:3px;background:#ffe6dd}
+  .rambar i.on{background:linear-gradient(90deg,#ff9a8b,#ffd28a)}
+  .rambar i.blink{animation:ramfill 2.4s ease-in-out infinite}
+  .rambar b{flex:0 0 auto;font-size:.7rem;color:var(--coral-d);font-weight:800;margin-left:4px}
+  @keyframes ramfill{0%,42%{background:#ffe6dd}58%,100%{background:linear-gradient(90deg,#ff9a8b,#ffd28a)}}
+
+  /* provisioning pipeline (mobile-first vertical) */
+  .pipe{margin-top:16px;display:flex;flex-direction:column;align-items:stretch}
+  .node{display:flex;align-items:center;gap:12px;background:#332e4d;border-radius:14px;padding:11px 13px;opacity:.4;transform:translateY(6px);transition:all .35s}
+  .node.active,.node.done{opacity:1;transform:none}
+  .node.active{background:#403a63;box-shadow:0 0 0 2px rgba(255,210,138,.5)}
+  .node.done{background:#2f4a40}
+  .nIc{font-size:1.45rem;flex:0 0 32px;width:32px;text-align:center}
+  .nBody{flex:1;min-width:0}
+  .nT{font-weight:800;font-size:.96rem}
+  .nD{font-size:.8rem;color:#b9b2cf;line-height:1.4}
+  .node.done .nD{color:#bfe6d4}
+  .nMk{flex:0 0 24px;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;background:#46406a}
+  .node.active .nMk{background:#ffd28a;color:#5a4410;animation:spin 1s linear infinite}
+  .node.done .nMk{background:#9fd8c4;color:#1f3b32}
+  .conn{width:3px;height:16px;align-self:center;background:#46406a;border-radius:3px;position:relative;overflow:hidden}
+  .conn.flow::after{content:"";position:absolute;left:0;right:0;height:60%;background:linear-gradient(180deg,transparent,#ffd28a,#9fd8c4,transparent);animation:flowdown .55s linear infinite}
+  @keyframes flowdown{0%{top:-60%}100%{top:100%}}
+  .conn.done{background:#9fd8c4}
+  /* fake terminal */
+  .term{margin-top:18px;background:#0f1117;border-radius:14px;overflow:hidden;border:1px solid #2a2f3a;opacity:0;transform:translateY(10px);transition:all .5s}
+  .term.show{opacity:1;transform:none}
+  .term-head{display:flex;align-items:center;gap:7px;padding:9px 12px;background:#1b1f29}
+  .term-head i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .term-head .r{background:#ff6f5e}.term-head .y{background:#ffd28a}.term-head .g{background:#9fd8c4}
+  .term-head span{margin-left:6px;font-size:.74rem;color:#7e879c;font-family:ui-monospace,Menlo,monospace}
+  .term-body{padding:13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.7;color:#cdd6e6;max-height:240px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+  .term-body .ok{color:#7ee0b0}.term-body .em2{color:#ffd28a}.term-body .usr{color:#9ec9ff}
+  .term-body div{margin:1px 0}
+  .term-input{display:flex;align-items:center;gap:8px;padding:11px 13px;border-top:1px solid #222834;background:#0c0e14}
+  .term-input .tp{color:#7ee0b0;font-family:ui-monospace,Menlo,monospace;font-size:13px;flex:0 0 auto;font-weight:700}
+  .term-input input{flex:1;min-width:0;background:transparent;border:0;outline:0;color:#e6ecf7;font-family:ui-monospace,Menlo,monospace;font-size:16px}
+  .term-input input::placeholder{color:#5b6478}
+
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important}}
 </style>
 </head>
 <body>
+  <canvas id="confetti"></canvas>
+  <button class="mutebtn" id="muteBtn" aria-label="소리 켜기/끄기">🔊</button>
 
   <header class="hero">
     <span class="kicker">💛 맑음에게, 시베리아호랑이가</span>
@@ -189,11 +271,31 @@
       </div>
 
       <div class="panel tint-blue" style="margin-top:22px">
-        <div class="big">☁️ '클라우드'가 뭐냐면 — 전기 같은 거야 🔌</div>
-        <div class="sub">예전엔 집집마다 발전기를 뒀지만, 지금은 콘센트에 꽂아 전기를 쓰지?<br>
-        컴퓨터도 똑같아. 필요할 때 인터넷에 '꽂아서' 빌려 쓰는 거야.<br>
-        나는 그 전기를 만드는 <b>발전소 — 컴퓨터 공장</b>을 짓는 사람이야.</div>
+        <div class="big">☁️ '클라우드'가 뭐냐면 — 멀리 있는 컴퓨터를 빌려 쓰는 거야</div>
+        <div class="sub">아이폰 쓰면 '<b>아이클라우드</b>'에 사진 올라가지? 그 사진은 사실
+        <b>어딘가 거대한 건물(데이터센터) 안의 컴퓨터</b>에 저장돼.<br>
+        이렇게 멀리 있는 컴퓨터를 <b>인터넷으로 빌려 쓰는 것</b>이 클라우드야 —
+        직접 안 사도 되고, 필요한 만큼만 빌리고 안 쓰면 반납.<br>
+        나는 그 <b>빌려줄 컴퓨터를 즉석에서 찍어내는 공장</b>을 만드는 사람이야.</div>
       </div>
+
+      <div class="panel tint-pink" style="margin-top:16px">
+        <div class="big">🧬 그럼 '가상 컴퓨터'는? — 원룸 건물 같은 거야</div>
+        <div class="vmbox">
+          <div class="vmreal">🏢 진짜 컴퓨터 1대 (서버)</div>
+          <div class="vmrooms">
+            <div class="vmroom">💻<small>가상컴 ①</small></div>
+            <div class="vmroom">💻<small>가상컴 ②</small></div>
+            <div class="vmroom">💻<small>가상컴 ③</small></div>
+            <div class="vmroom">💻<small>가상컴 ④</small></div>
+          </div>
+        </div>
+        <div class="sub">진짜 컴퓨터 한 대는 너무 크고 비싸서 한 명이 다 쓰면 낭비야.<br>
+        그래서 소프트웨어로 <b>칸막이를 쳐 독립된 '방' 여러 개</b>로 나눠.<br>
+        각 방은 자기만의 자물쇠·살림이 있어서 옆방이 뭘 하든 안 보이고 영향도 없어.<br>
+        이 '방' 하나가 바로 <b>가상 컴퓨터</b> — 나는 이 방들을 짓고 돌봐.</div>
+      </div>
+
       <p class="lead muted" style="margin-top:16px">네가 보는 <b>넷플릭스·인스타·은행앱</b> 거의 전부가 이런 '빌린 컴퓨터' 위에서 돌아가.
       즉 내가 만든 게 멈추면 — <span class="em">그것들도 멈춰</span>. 그래서 책임이 꽤 무거운 일이야.</p>
     </section>
@@ -202,20 +304,38 @@
     <section class="reveal">
       <div class="step"><span class="dot">3</span> 백문이 불여일견</div>
       <h2><span class="em">버튼 한 번 = 컴퓨터 한 대.</span><br>직접 눌러봐 👇</h2>
-      <p class="lead muted" style="margin-bottom:16px">사람들이 "컴퓨터 한 대 주세요" 하고 버튼을 누르면, 내가 만든 시스템이 뒤에서 이걸 자동으로 해:</p>
+      <p class="lead muted" style="margin-bottom:16px">사람들이 "컴퓨터 한 대 주세요" 하고 버튼을 누르면, 내가 만든 시스템이 뒤에서 이걸 자동으로 해. <span class="em">🔊 소리 켜고 눌러봐!</span></p>
       <div class="demo">
         <div class="scr-head"><i class="r"></i><i class="y"></i><i class="g"></i><span>cloud-console</span></div>
         <button class="btn" id="makeBtn">▶  컴퓨터 한 대 만들기</button>
-        <ul class="steps" id="steps">
-          <li data-t="📨"><span class="mk">·</span> 요청 받았어요</li>
-          <li data-t="🏠"><span class="mk">·</span> 빈 자리(서버)를 찾는 중…</li>
-          <li data-t="💿"><span class="mk">·</span> 운영체제(OS)를 설치하는 중…</li>
-          <li data-t="🪪"><span class="mk">·</span> 이름·암호·설정을 입혀주는 중…</li>
-          <li data-t="🌐"><span class="mk">·</span> 인터넷에 연결하는 중…</li>
-          <li data-t="🔑"><span class="mk">·</span> 보안(암호화) 적용하는 중…</li>
-        </ul>
-        <div class="final" id="final">✅ 컴퓨터 준비 완료! &nbsp;방금 0.0초 만에 한 대가 태어났어 🎉</div>
-        <div class="cap">…이 모든 흐름을 0에서부터 직접 설계하고 만든 게 내 일이야.</div>
+        <div class="pbar"><i id="pbar"></i></div>
+
+        <div class="pipe" id="pipe">
+          <div class="node"><div class="nIc">📨</div><div class="nBody"><div class="nT">요청 받기</div><div class="nD">"컴퓨터 한 대 주세요" 주문서 접수 · 신원 확인</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">🧭</div><div class="nBody"><div class="nT">자리 찾기</div><div class="nD">여유 있는 서버(건물)를 골라 방 한 칸 배정</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">💽</div><div class="nBody"><div class="nT">저장공간 준비</div><div class="nD">새 컴퓨터가 쓸 디스크(하드)를 만들어 붙임</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">💿</div><div class="nBody"><div class="nT">OS 설치 + 세팅</div><div class="nD">운영체제를 깔고 이름·암호를 자동으로 입힘</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">🌐</div><div class="nBody"><div class="nT">네트워크 연결</div><div class="nD">인터넷 주소(IP)를 주고 가상 랜선을 꽂음</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">🔐</div><div class="nBody"><div class="nT">보안 적용</div><div class="nD">방에 자물쇠 — 메모리 암호화·방화벽 켜기</div></div><div class="nMk">·</div></div>
+          <div class="conn"></div>
+          <div class="node"><div class="nIc">🚀</div><div class="nBody"><div class="nT">전원 ON · 부팅!</div><div class="nD">컴퓨터가 깨어나는 중… 거의 다 됐어</div></div><div class="nMk">·</div></div>
+        </div>
+
+        <div class="cap" id="cap">…이 흐름(주문→배정→설치→연결→보안→부팅)을 0부터 직접 설계하고 만든 게 내 일이야.</div>
+
+        <div class="term" id="term" hidden>
+          <div class="term-head"><i class="r"></i><i class="y"></i><i class="g"></i><span>malgeum-vm · 방금 태어난 컴퓨터</span></div>
+          <div class="term-body" id="termBody"></div>
+          <form class="term-input" id="termForm">
+            <span class="tp">맑음$</span>
+            <input id="termIn" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="여기에 입력해봐… (예: help)">
+          </form>
+        </div>
       </div>
     </section>
 
@@ -223,18 +343,19 @@
     <section class="reveal">
       <div class="step"><span class="dot">4</span> 내가 실제로 만든 것들</div>
       <h2>전부 "컴퓨터를 <span class="em">잘 만들고·잘 돌보는</span>" 일이야</h2>
+      <p class="lead muted" style="margin-bottom:18px">어려운 말 같지만, 사실 다 <b>일상에서 한 번쯤 겪는 일</b>이야 👇</p>
       <div class="grid">
-        <div class="card"><div class="ic">🏭</div><h3>컴퓨터 출생 공장 짓기</h3><p>아무것도 없던 상태에서, 컴퓨터를 자동으로 찍어내는 공장 라인을 <b>처음부터 끝까지</b> 만들었어.</p><span class="tag">0 → 1 직접 설계</span></div>
-        <div class="card"><div class="ic">🪪</div><h3>갓 태어난 컴퓨터 세팅</h3><p>막 만들어진 컴퓨터에 이름·암호·설정을 자동으로 입혀줘. 종류가 다른 컴퓨터 <b>4가지</b>를 다 챙겼어.</p><span class="tag">4종 OS 지원</span></div>
-        <div class="card"><div class="ic">🔌</div><h3>켜둔 채로 부품 끼우기</h3><p>컴퓨터를 끄지 않고도 메모리·저장공간을 더 꽂아줘. 달리는 차의 바퀴를 안 세우고 가는 셈이야.</p><span class="tag">무중단 업그레이드</span></div>
-        <div class="card"><div class="ic">🔐</div><h3>아무도 못 훔쳐보는 금고</h3><p>컴퓨터 속 내용을 통째로 암호화해서, 주인 말곤 누구도 못 들여다보게 하는 보안 기능을 넣었어.</p><span class="tag">메모리 암호화</span></div>
-        <div class="card"><div class="ic">🛟</div><h3>고장 나도 안 멈추게</h3><p>서버 한 대가 갑자기 뻗어도, 그 위 컴퓨터들을 살려서 옮기는 안전망을 만들었어. (이게 내가 가끔 늦는 이유…😅)</p><span class="tag">장애 대응·복구</span></div>
-        <div class="card"><div class="ic">🤖</div><h3>AI한테 내 잡일 시키기</h3><p>반복되는 귀찮은 작업을 AI가 대신 하도록 <b>나만의 도구</b>를 직접 만들어서 일에 바로 써먹었어.</p><span class="tag">자작 AI 도구</span></div>
+        <div class="card"><div class="ic">🏭</div><h3>컴퓨터 한 대를 1분 만에</h3><p>새 노트북 사면 세팅까지 며칠 걸리지? 나는 <b>버튼 한 번에 1분</b>이면 컴퓨터가 통째로 만들어지는 자동 공장을 0부터 지었어. (방금 위에서 눌러본 그거!)</p><span class="tag">0 → 1 직접 설계</span></div>
+        <div class="card"><div class="ic">🪪</div><h3>새 폰 개통처럼 자동 세팅</h3><p>새 폰 사면 이름·와이파이·계정 맞추기 귀찮잖아. 컴퓨터가 태어나는 순간 그걸 <b>전부 자동</b>으로 끝내. 종류 다른 <b>4가지</b>를 다 지원해.</p><span class="tag">4종 OS 지원</span></div>
+        <div class="card"><div class="ic">🔌</div><h3>끄지 않고 용량 늘리기</h3><p>보통 부품 바꾸려면 컴퓨터를 꺼야 하지? 내 컴퓨터는 <b>쓰는 도중에</b> 메모리·저장공간을 늘려줘.</p><div class="rambar"><i class="on"></i><i class="on"></i><i class="on"></i><i class="blink"></i><b>+8GB</b></div><span class="tag">무중단 업그레이드</span></div>
+        <div class="card"><div class="ic">🔐</div><h3>나만 볼 수 있는 금고</h3><p>중요한 게 든 컴퓨터를 통째로 암호화해서, <b>관리자인 나조차 안을 못 들여다보게</b> 잠가. 옆방도 건물 주인도 못 봐.</p><span class="tag">통째로 암호화</span></div>
+        <div class="card"><div class="ic">🛟</div><h3>끊기지 않게 살려내기</h3><p>영상 보는데 서버 한 대가 갑자기 고장나도, <b>안 끊기게</b> 자동으로 다른 데로 옮겨 살려내는 안전망을 만들었어. (이게 가끔 내가 늦는 이유…😅)</p><span class="tag">장애 대응·복구</span></div>
+        <div class="card"><div class="ic">🤖</div><h3>AI 비서 만들기</h3><p>똑같은 단순 작업이 반복되면 시간 아깝잖아. 그걸 <b>AI가 대신 하도록</b> 나만의 비서 도구를 직접 만들어서 일을 빨리 끝내.</p><span class="tag">자작 AI 도구</span></div>
 
         <!-- live migration animation -->
         <div class="card mig">
           <div class="ic">🚚</div>
-          <h3>끄지 않고 '이사'시키기 — 내가 제일 자랑하고 싶은 거</h3>
+          <h3>끄지 않고 '이사'시키기</h3>
           <p style="margin-bottom:6px">돌아가는 컴퓨터를 <b>멈추지 않고</b> 다른 자리로 옮기는 기술. 너가 영상 끊기지 않게 편집하듯, 나는 서비스가 안 끊기게 옮겨.</p>
           <div class="stage">
             <div class="srv srvA">🖥️<small>서버 A</small></div>
@@ -296,8 +417,8 @@
         <h2>요약하면</h2>
         <p>나는 <b>눈에는 안 보이지만</b>, 수많은 사람이 쓰는 <span class="em">'인터넷 속 컴퓨터'</span>를 만들고 돌보는 사람이야.<br><br>
         맑음처럼 — 화려한 무대 위가 아니라 그 <b>뒤편</b>에서.<br>
-        이제 내가 뭐 하는지 조금 알겠지? 😊<br><br>
-        <b>— 너의 시베리아호랑이가 🐯💛</b></p>
+        이제 내가 뭐 하는지 좀 알겠지? 🐯<br><br>
+        <b>— 시베리아호랑이</b></p>
       </div>
     </section>
 
@@ -306,50 +427,148 @@
   <footer>🐯 시베리아호랑이가 맑음에게 — made with 💛</footer>
 
   <script>
-    // scroll reveal
+    // ---------- sound (low volume, synthesized — no files) ----------
+    let actx=null, muted=false;
+    function AC(){ try{ if(!actx) actx=new (window.AudioContext||window.webkitAudioContext)(); if(actx.state==='suspended') actx.resume(); }catch(e){} return actx; }
+    function tone(freq,dur,type,vol){
+      if(muted) return; const c=AC(); if(!c) return;
+      const o=c.createOscillator(), g=c.createGain();
+      o.type=type||'sine'; o.frequency.value=freq; o.connect(g); g.connect(c.destination);
+      const t=c.currentTime, v=vol||0.06;
+      g.gain.setValueAtTime(0.0001,t);
+      g.gain.exponentialRampToValueAtTime(v,t+0.012);
+      g.gain.exponentialRampToValueAtTime(0.0001,t+dur);
+      o.start(t); o.stop(t+dur+0.03);
+    }
+    const blip=(i)=>tone(460+i*70,0.09,'sine',0.06);
+    const clickS=()=>tone(300,0.05,'square',0.05);
+    const typeS=()=>tone(1250,0.015,'square',0.022);
+    const chime=()=>[523.25,659.25,783.99,1046.5].forEach((f,i)=>setTimeout(()=>tone(f,0.22,'triangle',0.075),i*95));
+    const muteBtn=document.getElementById('muteBtn');
+    muteBtn.addEventListener('click',()=>{ muted=!muted; muteBtn.textContent=muted?'🔇':'🔊'; if(!muted){AC();clickS();} });
+
+    // ---------- confetti ----------
+    function confetti(){
+      const cv=document.getElementById('confetti'); if(!cv) return;
+      const ctx=cv.getContext('2d'); cv.width=innerWidth; cv.height=innerHeight;
+      const cols=['#ff8a7a','#ffd28a','#9fd8c4','#7ec4e8','#c9b8ec','#ff9a8b'];
+      const P=[]; for(let i=0;i<110;i++){P.push({x:innerWidth*0.5,y:innerHeight*0.42,vx:(Math.random()-.5)*11,vy:Math.random()*-11-3,g:0.3,s:6+Math.random()*7,c:cols[i%cols.length],a:1,rot:Math.random()*6.28,vr:(Math.random()-.5)*.5});}
+      let f=0;
+      (function draw(){ f++; ctx.clearRect(0,0,cv.width,cv.height);
+        P.forEach(p=>{ if(p.a<=0) return; p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr;p.a-=0.0072;
+          ctx.save();ctx.globalAlpha=Math.max(p.a,0);ctx.translate(p.x,p.y);ctx.rotate(p.rot);
+          ctx.fillStyle=p.c;ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*0.6);ctx.restore();});
+        if(f<170) requestAnimationFrame(draw); else ctx.clearRect(0,0,cv.width,cv.height);
+      })();
+    }
+
+    // ---------- scroll reveal ----------
     const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // count-up
+    // ---------- count-up ----------
     function animateCount(el){
       const target=+el.dataset.count, comma=el.dataset.comma, suffix=el.dataset.suffix||'';
-      const dur=1400, t0=performance.now();
-      function tick(now){
-        const p=Math.min((now-t0)/dur,1), eased=1-Math.pow(1-p,3);
-        let v=Math.round(target*eased);
+      const dur=1500, t0=performance.now();
+      (function tick(now){
+        const p=Math.min((now-t0)/dur,1), e=1-Math.pow(1-p,3);
+        const v=Math.round(target*e);
         el.textContent=(comma?v.toLocaleString():v)+suffix;
         if(p<1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
+        else { el.classList.add('pop'); tone(880,0.12,'triangle',0.045); }
+      })(performance.now());
     }
     const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);co.unobserve(e.target)}})},{threshold:.6});
     document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
 
-    // VM provisioning demo
-    const btn=document.getElementById('makeBtn'),
-          items=[...document.querySelectorAll('#steps li')],
-          finalEl=document.getElementById('final');
+    // ---------- provisioning pipeline + terminal ----------
+    const btn=document.getElementById('makeBtn');
+    const pipe=document.getElementById('pipe');
+    const nodes=[...pipe.querySelectorAll('.node')];
+    const conns=[...pipe.querySelectorAll('.conn')];
+    const pbar=document.getElementById('pbar');
+    const term=document.getElementById('term');
+    const termBody=document.getElementById('termBody');
     let running=false;
+
+    function resetDemo(){
+      nodes.forEach(n=>{n.classList.remove('active','done');n.querySelector('.nMk').textContent='·';});
+      conns.forEach(c=>c.classList.remove('flow','done'));
+      pbar.style.width='0%';
+      term.hidden=true; term.classList.remove('show'); termBody.innerHTML='';
+    }
     btn.addEventListener('click',()=>{
-      if(running) return; running=true;
-      btn.disabled=true; finalEl.classList.remove('show');
-      items.forEach(li=>{li.className='';li.querySelector('.mk').textContent='·';});
-      const t0=performance.now();
-      let i=0;
-      function next(){
-        if(i>0){const prev=items[i-1];prev.classList.remove('run');prev.classList.add('done');prev.querySelector('.mk').textContent=prev.dataset.t;}
-        if(i<items.length){
-          const li=items[i];li.classList.add('show','run');li.querySelector('.mk').textContent='◴';
-          i++; setTimeout(next, 620);
+      if(running) return; running=true; AC(); clickS();
+      btn.disabled=true; resetDemo();
+      const t0=performance.now(); let i=0;
+      (function activate(){
+        if(i>0){ const prev=nodes[i-1]; prev.classList.remove('active'); prev.classList.add('done'); prev.querySelector('.nMk').textContent='✓';
+                 if(conns[i-1]){conns[i-1].classList.remove('flow');conns[i-1].classList.add('done');} }
+        if(i<nodes.length){
+          const n=nodes[i]; n.classList.add('active'); n.querySelector('.nMk').textContent='◴';
+          if(conns[i]) conns[i].classList.add('flow');
+          pbar.style.width=Math.round(((i+1)/nodes.length)*100)+'%';
+          blip(i); i++; setTimeout(activate,720);
         } else {
           const secs=((performance.now()-t0)/1000).toFixed(1);
-          finalEl.innerHTML='✅ 컴퓨터 준비 완료! &nbsp;방금 '+secs+'초 만에 한 대가 태어났어 🎉';
-          finalEl.classList.add('show');
+          chime(); confetti();
           btn.disabled=false; btn.textContent='▶  다시 만들어보기'; running=false;
+          bootTerminal(secs);
         }
-      }
-      next();
+      })();
     });
+
+    // ---------- terminal ----------
+    function termPrint(html){ const d=document.createElement('div'); d.innerHTML=html; termBody.appendChild(d); termBody.scrollTop=termBody.scrollHeight; }
+    const bootLines=[
+      '[ <span class="ok">ok</span> ] 컴퓨터 부팅 시작…',
+      '[ <span class="ok">ok</span> ] CPU 4코어 · RAM 8GB · 디스크 80GB',
+      '[ <span class="ok">ok</span> ] 네트워크: 10.0.0.<b>42</b> 연결됨',
+      '[ <span class="ok">ok</span> ] 보안(메모리 암호화) 켜짐'
+    ];
+    function bootTerminal(secs){
+      term.hidden=false; requestAnimationFrame(()=>term.classList.add('show'));
+      termBody.innerHTML=''; let k=0;
+      (function nextLine(){
+        if(k<bootLines.length){ termPrint(bootLines[k]); typeS(); k++; setTimeout(nextLine,420); }
+        else {
+          termPrint('[ <span class="ok">완료</span> ] 부팅 끝 — <b>'+secs+'초</b> 만에 살아났어 🎉');
+          termPrint('&nbsp;');
+          termPrint('방금 태어난 진짜 같은 가상 컴퓨터야. 명령어 한번 쳐봐 👇');
+          termPrint('(<span class="em2">help</span> · <span class="em2">whoami</span> · <span class="em2">ls</span> · <span class="em2">사랑해</span>)');
+        }
+      })();
+    }
+    const termForm=document.getElementById('termForm');
+    const termIn=document.getElementById('termIn');
+    const esc=(s)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const cmds={
+      'help':()=>'명령어:  <span class="em2">whoami · ls · cat &lt;파일&gt; · date · 사랑해 · sudo · clear</span>',
+      'whoami':()=>'<span class="usr">맑음</span> — 이 시스템 최고 관리자 (root보다 위 🐯)',
+      'ls':()=>'사랑해.txt   우리_여행.txt   <span class="em2">시베리아호랑이의_마음.txt</span>',
+      'cat 사랑해.txt':()=>'❤️ × 무한 — 디스크 용량 초과',
+      'cat 우리_여행.txt':()=>'TODO: 다음 여행지 정하기  (담당자: 시베리아호랑이)',
+      'cat 시베리아호랑이의_마음.txt':()=>'Permission denied 🔒 — 부끄러우니까 직접 물어보세요',
+      'date':()=>new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'}),
+      '사랑해':()=>'<span class="ok">200 OK</span> ❤️',
+      'love':()=>'<span class="ok">200 OK</span> ❤️',
+      'sudo':()=>'맑음 is already in the sudoers file. 😏',
+      '시베리아호랑이':()=>'🐯 ping… 어흥! (응답시간 1ms)',
+      'clear':()=>{termBody.innerHTML='';return null;}
+    };
+    if(termForm){
+      termForm.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const raw=termIn.value.trim(); if(!raw) return;
+        termPrint('<span class="usr">맑음$</span> '+esc(raw));
+        clickS();
+        const key=raw.toLowerCase();
+        const fn=cmds[key]||cmds[raw]|| (key.indexOf('sudo')===0?cmds['sudo']:null);
+        if(fn){ const out=fn(); if(out!=null) termPrint(out); }
+        else { termPrint('<span class="em2">'+esc(raw)+'</span>: command not found — 그치만 맑음 잘못은 아님 🐯'); }
+        termIn.value=''; termBody.scrollTop=termBody.scrollHeight;
+      });
+    }
   </script>
 </body>
 </html>
