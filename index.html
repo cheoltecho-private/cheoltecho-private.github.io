@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>내가 하는 일, 쉽게 설명해줄게 💛</title>
 <meta property="og:type" content="website">
-<meta property="og:title" content="내가 매일 무슨 일을 하는지, 쉽게 설명해줄게 💛">
-<meta property="og:description" content="IT 몰라도 5분이면 이해돼요 — 인터넷 속에 '컴퓨터'를 만드는 사람 이야기">
+<meta property="og:title" content="맑음아, 내가 무슨 일 하는지 설명해줄게 💛">
+<meta property="og:description" content="사실 우리 일은 닮았어 — 무대 뒤에서, 사람들이 즐기는 것의 뒷편을 만드는 사람 이야기 🐯">
 <meta name="twitter:card" content="summary">
 <meta name="theme-color" content="#ff8a7a">
 <style>
@@ -29,85 +29,97 @@
   .wrap{max-width:760px;margin:0 auto;padding:0 22px}
 
   /* HERO */
-  .hero{text-align:center;padding:78px 22px 56px}
+  .hero{text-align:center;padding:78px 22px 50px}
   .hero .kicker{
     display:inline-block;background:#fff;border:1px solid #ffe0d6;color:var(--coral-d);
-    font-weight:700;font-size:.82rem;letter-spacing:.04em;padding:7px 16px;border-radius:999px;
-    box-shadow:var(--shadow);
+    font-weight:700;font-size:.82rem;letter-spacing:.04em;padding:7px 16px;border-radius:999px;box-shadow:var(--shadow);
   }
-  .hero h1{
-    font-size:2.35rem;line-height:1.3;margin:22px 0 14px;font-weight:800;letter-spacing:-.02em;
-  }
+  .hero h1{font-size:2.3rem;line-height:1.32;margin:22px 0 14px;font-weight:800;letter-spacing:-.02em}
   .hero h1 .hl{color:var(--coral-d)}
-  .hero p{color:var(--soft);font-size:1.06rem;max-width:520px;margin:0 auto}
-  .scrollcue{margin-top:34px;color:var(--coral);font-size:1.6rem;animation:bob 1.8s ease-in-out infinite}
+  .hero p{color:var(--soft);font-size:1.06rem;max-width:540px;margin:0 auto}
+  .scrollcue{margin-top:30px;color:var(--coral);font-size:1.6rem;animation:bob 1.8s ease-in-out infinite}
   @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
 
   /* SECTION */
-  section{padding:34px 0}
+  section{padding:32px 0}
   .reveal{opacity:0;transform:translateY(24px);transition:all .7s cubic-bezier(.2,.7,.2,1)}
   .reveal.in{opacity:1;transform:none}
-  .step{
-    display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--coral-d);
-    font-size:.92rem;letter-spacing:.02em;margin-bottom:10px;
-  }
+  .step{display:inline-flex;align-items:center;gap:8px;font-weight:800;color:var(--coral-d);font-size:.92rem;margin-bottom:10px}
   .step .dot{width:26px;height:26px;border-radius:50%;background:#ffe0d6;display:grid;place-items:center;font-size:.85rem}
-  h2{font-size:1.62rem;font-weight:800;letter-spacing:-.01em;margin-bottom:14px;line-height:1.35}
-  .lead{font-size:1.08rem;color:var(--ink)}
+  h2{font-size:1.6rem;font-weight:800;letter-spacing:-.01em;margin-bottom:14px;line-height:1.36}
+  .lead{font-size:1.07rem}
   .muted{color:var(--soft)}
+  .em{color:var(--coral-d);font-weight:700}
+
+  .panel{background:var(--card);border-radius:24px;box-shadow:var(--shadow);padding:28px 24px;border:1px solid #fff}
+  .panel.tint-blue{background:linear-gradient(180deg,#f1f9fe,#ffffff)}
+  .panel.tint-pink{background:linear-gradient(180deg,#fff6f3,#ffffff)}
+  .panel .big{font-size:1.18rem;font-weight:800;text-align:center;margin-bottom:8px}
+  .panel .sub{text-align:center;color:var(--soft)}
+  .panel svg{display:block;margin:0 auto 16px}
 
   /* zoom-in hierarchy */
   .zoom{margin-top:6px}
-  .layer{
-    border-radius:18px;padding:16px 18px;margin:0 auto;box-shadow:var(--shadow);
-    border:1px solid #fff;background:var(--card);
-  }
-  .layer + .layer{margin-top:-6px}
-  .layer .lt{font-weight:800;font-size:1.02rem;display:flex;align-items:center;gap:8px}
+  .layer{border-radius:18px;padding:15px 18px;margin:0 auto;box-shadow:var(--shadow);border:1px solid #fff;background:var(--card)}
+  .layer+.layer{margin-top:-4px}
+  .layer .lt{font-weight:800;font-size:1.0rem;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .layer .ld{color:var(--soft);font-size:.9rem;margin-top:2px}
-  .layer .me{display:inline-block;margin-left:8px;font-size:.7rem;font-weight:800;color:#fff;background:var(--coral);padding:2px 8px;border-radius:999px;vertical-align:middle}
+  .layer .me{font-size:.7rem;font-weight:800;color:#fff;background:var(--coral);padding:2px 9px;border-radius:999px}
   .L1{width:100%;background:linear-gradient(180deg,#fff,#fbf7ff)}
   .L2{width:90%;background:linear-gradient(180deg,#fff,#f1f9fe)}
   .L3{width:80%;background:linear-gradient(180deg,#fff,#f1faf6)}
   .L4{width:70%;background:linear-gradient(180deg,#fff,#fffaf0)}
   .L5{width:60%;background:linear-gradient(180deg,#fff6f3,#fff0ec);border:2px solid #ffc7bb}
-  .zoom .arr{text-align:center;color:#e0b6ac;font-size:1.1rem;margin:2px 0;line-height:1}
+  .zoom .arr{text-align:center;color:#e0b6ac;font-size:1.05rem;margin:1px 0;line-height:1}
   @media(max-width:560px){.L2,.L3,.L4,.L5{width:100%}}
 
-  /* big analogy card */
-  .panel{
-    background:var(--card);border-radius:24px;box-shadow:var(--shadow);
-    padding:30px 26px;border:1px solid #fff;
-  }
-  .panel.tint-coral{background:linear-gradient(180deg,#fff6f3,#ffffff)}
-  .panel.tint-blue{background:linear-gradient(180deg,#f1f9fe,#ffffff)}
-  .panel.tint-mint{background:linear-gradient(180deg,#f1faf6,#ffffff)}
-  .panel svg{display:block;margin:0 auto 18px}
-  .panel .big{font-size:1.22rem;font-weight:700;text-align:center;margin-bottom:8px}
-  .panel .sub{text-align:center;color:var(--soft)}
+  /* interactive VM demo */
+  .demo{background:#2b2740;border-radius:22px;padding:22px 20px 24px;box-shadow:0 14px 40px rgba(60,40,60,.25);color:#efeaf5}
+  .demo .scr-head{display:flex;align-items:center;gap:7px;margin-bottom:14px}
+  .demo .scr-head i{width:11px;height:11px;border-radius:50%;display:inline-block}
+  .demo .scr-head .r{background:#ff6f5e}.demo .scr-head .y{background:#ffd28a}.demo .scr-head .g{background:#9fd8c4}
+  .demo .scr-head span{margin-left:6px;font-size:.78rem;color:#b9b2cf;font-family:ui-monospace,Menlo,monospace}
+  .demo .btn{display:block;width:100%;border:0;cursor:pointer;font-size:1.05rem;font-weight:800;color:#fff;
+    background:linear-gradient(180deg,#ff9a8b,#ef6f5e);padding:15px;border-radius:14px;box-shadow:0 8px 18px rgba(239,111,94,.4);transition:transform .15s,opacity .2s}
+  .demo .btn:active{transform:scale(.98)}
+  .demo .btn:disabled{opacity:.55;cursor:default}
+  .demo .steps{list-style:none;margin:16px 0 0;padding:0;min-height:8px}
+  .demo .steps li{display:flex;align-items:center;gap:11px;padding:9px 4px;font-size:.98rem;opacity:0;transform:translateX(-8px);transition:all .35s}
+  .demo .steps li.show{opacity:1;transform:none}
+  .demo .steps li .mk{width:24px;height:24px;flex:0 0 24px;border-radius:50%;display:grid;place-items:center;font-size:.85rem;background:#46406a}
+  .demo .steps li.done .mk{background:#9fd8c4;color:#1f3b32}
+  .demo .steps li.run .mk{background:#ffd28a;color:#5a4410;animation:spin 1s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .demo .final{margin-top:14px;text-align:center;font-weight:800;color:#9fe6cf;opacity:0;transition:opacity .4s}
+  .demo .final.show{opacity:1}
+  .demo .cap{text-align:center;color:#b9b2cf;font-size:.86rem;margin-top:10px}
 
-  /* work cards grid */
+  /* work cards */
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
   @media(max-width:560px){.grid{grid-template-columns:1fr}}
-  .card{
-    background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:22px 20px;border:1px solid #fff;
-    transition:transform .25s ease;
-  }
+  .card{background:var(--card);border-radius:20px;box-shadow:var(--shadow);padding:22px 20px;border:1px solid #fff;transition:transform .25s}
   .card:hover{transform:translateY(-4px)}
   .card .ic{font-size:1.7rem}
-  .card h3{font-size:1.08rem;font-weight:800;margin:10px 0 6px}
-  .card p{font-size:.96rem;color:var(--soft);margin:0}
-  .card .tag{
-    display:inline-block;margin-top:12px;font-size:.76rem;font-weight:700;color:var(--coral-d);
-    background:#fff1ec;padding:4px 10px;border-radius:999px
-  }
+  .card h3{font-size:1.06rem;font-weight:800;margin:10px 0 6px}
+  .card p{font-size:.95rem;color:var(--soft);margin:0}
+  .card .tag{display:inline-block;margin-top:12px;font-size:.76rem;font-weight:700;color:var(--coral-d);background:#fff1ec;padding:4px 10px;border-radius:999px}
+
+  /* live migration mini-anim */
+  .mig{grid-column:1/-1;background:linear-gradient(180deg,#f1f9fe,#fff)}
+  .mig .stage{position:relative;height:96px;margin:10px 0 4px}
+  .srv{position:absolute;top:24px;width:74px;height:54px;border-radius:10px;background:#fff;border:2.5px solid #7ec4e8;display:grid;place-items:center;font-size:1.4rem;box-shadow:var(--shadow)}
+  .srvA{left:6%}.srvB{right:6%}
+  .srv small{position:absolute;bottom:-20px;font-size:.72rem;color:var(--soft);font-weight:700;width:120px;text-align:center;left:50%;transform:translateX(-50%)}
+  .vm{position:absolute;top:34px;left:calc(6% + 22px);width:30px;height:30px;border-radius:7px;background:linear-gradient(180deg,#ffd28a,#ff9a8b);box-shadow:0 6px 14px rgba(239,111,94,.45);display:grid;place-items:center;font-size:.85rem;animation:move 5s ease-in-out infinite}
+  @keyframes move{0%,12%{left:calc(6% + 22px)}50%,62%{left:calc(94% - 52px)}100%{left:calc(6% + 22px)}}
+  .mig .nolabel{text-align:center;font-size:.8rem;color:var(--coral-d);font-weight:800}
 
   /* stats */
   .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   @media(max-width:560px){.stats{grid-template-columns:1fr 1fr}}
   .stat{background:var(--card);border-radius:18px;box-shadow:var(--shadow);text-align:center;padding:20px 12px}
-  .stat .n{font-size:1.8rem;font-weight:800;color:var(--coral-d);line-height:1.1}
-  .stat .l{font-size:.84rem;color:var(--soft);margin-top:6px}
+  .stat .n{font-size:1.85rem;font-weight:800;color:var(--coral-d);line-height:1.1}
+  .stat .l{font-size:.83rem;color:var(--soft);margin-top:6px}
 
   /* timeline */
   .tl{position:relative;padding-left:30px;margin-top:8px}
@@ -118,208 +130,226 @@
   .tl .ti{font-weight:700;margin-top:2px}
   .tl .de{color:var(--soft);font-size:.95rem}
 
+  /* the "우리 닮았어" parallel */
+  .twin{background:linear-gradient(180deg,#fff,#fff2ee);border-radius:24px;box-shadow:var(--shadow);padding:28px 24px;border:1px solid #fff}
+  .twin .row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:11px 0;border-bottom:1px dashed #ffded4}
+  .twin .row:last-child{border-bottom:0}
+  .twin .you{text-align:right;font-weight:700}
+  .twin .me2{text-align:left;font-weight:700;color:var(--coral-d)}
+  .twin .mid{color:#e0b6ac;font-size:.9rem}
+  .twin .you small,.twin .me2 small{display:block;font-weight:500;color:var(--soft);font-size:.8rem}
+  .twin .punch{text-align:center;margin-top:18px;font-size:1.08rem;font-weight:700;line-height:1.6}
+
   /* outro */
-  .outro{
-    text-align:center;background:linear-gradient(180deg,#fff,#fff2ee);
-    border-radius:26px;box-shadow:var(--shadow);padding:40px 26px;border:1px solid #fff
-  }
+  .outro{text-align:center;background:linear-gradient(180deg,#fff,#fff2ee);border-radius:26px;box-shadow:var(--shadow);padding:40px 26px;border:1px solid #fff}
   .outro .heart{font-size:2.2rem}
   .outro h2{margin:10px 0 12px}
   .outro p{color:var(--soft);max-width:520px;margin:0 auto}
   footer{text-align:center;color:#c3b4b0;font-size:.82rem;padding:34px 0 50px}
-  .em{color:var(--coral-d);font-weight:700;font-style:normal}
 </style>
 </head>
 <body>
 
-  <!-- HERO -->
   <header class="hero">
-    <span class="kicker">💛 너에게 보여주려고 만들었어</span>
-    <h1>내가 매일 무슨 일을 하는지,<br><span class="hl">하나도 안 어렵게</span> 설명해줄게</h1>
-    <p>IT를 몰라도 괜찮아. 끝까지 보면 "아, 이런 일을 하는구나" 하게 될 거야 :)</p>
+    <span class="kicker">💛 맑음에게, 시베리아호랑이가</span>
+    <h1>맑음아, 내가 매일 무슨 일을 하는지<br><span class="hl">하나도 안 어렵게</span> 설명해줄게</h1>
+    <p>IT를 몰라도 괜찮아. 끝까지 보면 — 사실 <b>맑음이랑 나랑 하는 일이 꽤 닮았다</b>는 것도 알게 될 거야 :)</p>
     <div class="scrollcue">↓</div>
   </header>
 
   <main class="wrap">
 
-    <!-- 1. 직업 -->
+    <!-- 1. 직업 : 무대 뒤 -->
     <section class="reveal">
       <div class="step"><span class="dot">1</span> 나는 어떤 직업이냐면</div>
-      <h2>한마디로 <span class="em">소프트웨어 개발자</span>야</h2>
-      <p class="lead">개발자는 <b>컴퓨터에게 시킬 일을 '글(코드)'로 적어주는 사람</b>이야.
-      마치 요리사가 레시피를 적으면 그대로 요리가 나오는 것처럼, 내가 글을 적으면 컴퓨터가 그대로 움직여.</p>
-      <p class="lead" style="margin-top:14px">그 중에서도 나는 <b>'백엔드'</b> 개발자야.
-      네가 보는 예쁜 화면(앱·웹) 말고, 그 <span class="em">뒤에서 묵묵히 돌아가는 주방</span>을 만드는 쪽이지.
-      눈엔 안 보이지만, 이게 없으면 아무것도 안 돌아가.</p>
+      <h2>한마디로 — <span class="em">'무대 뒤'를 만드는 사람</span>이야</h2>
+      <p class="lead">나는 <b>소프트웨어 개발자</b>야. 컴퓨터에게 시킬 일을 '글(코드)'로 적으면 그대로 움직이게 하는 사람이지.</p>
+      <p class="lead" style="margin-top:14px">그 중에서도 <b>'백엔드'</b> 개발자 — 사람들이 보는 <b>앱의 예쁜 화면</b> 말고,
+      그 뒤에서 모든 게 돌아가게 하는 <span class="em">보이지 않는 부분</span>을 만들어.</p>
+      <p class="lead" style="margin-top:14px">네가 강연장에서 관객이 보는 건 <b>무대 위 작가님</b>이지만,
+      그게 잘 굴러가게 <b>무대 뒤에서 카메라·조명·편집</b>을 챙기는 게 너잖아.
+      나도 똑같아 — <span class="em">화면 뒤를 챙기는 사람</span>이야.</p>
     </section>
 
-    <!-- 2. 분야 -->
+    <!-- 2. 분야 : zoom in + 발전소 -->
     <section class="reveal">
       <div class="step"><span class="dot">2</span> 그 중에서도 정확히 어디냐면</div>
       <h2>한 칸씩 <span class="em">좁혀 들어가 볼게</span></h2>
       <p class="lead muted" style="margin-bottom:18px">개발자라고 다 같은 일을 하는 게 아니야. 나는 이렇게 점점 안쪽으로 들어간 자리에 있어 👇</p>
-
       <div class="zoom">
-        <div class="layer L1">
-          <div class="lt">💻 소프트웨어 개발자</div>
-          <div class="ld">컴퓨터에게 시킬 일을 코드로 적는 사람들 전체</div>
-        </div>
+        <div class="layer L1"><div class="lt">💻 소프트웨어 개발자</div><div class="ld">컴퓨터에게 시킬 일을 코드로 적는 사람들 전체</div></div>
         <div class="arr">▾</div>
-        <div class="layer L2">
-          <div class="lt">🍳 백엔드 개발자</div>
-          <div class="ld">화면 말고, 뒤에서 돌아가는 '주방'을 만드는 쪽</div>
-        </div>
+        <div class="layer L2"><div class="lt">🎬 백엔드 개발자</div><div class="ld">화면 말고, 무대 뒤에서 돌아가는 부분을 만드는 쪽</div></div>
         <div class="arr">▾</div>
-        <div class="layer L3">
-          <div class="lt">☁️ 클라우드 도메인</div>
-          <div class="ld">인터넷 너머로 컴퓨터·서비스를 빌려주는 분야</div>
-        </div>
+        <div class="layer L3"><div class="lt">☁️ 클라우드 도메인</div><div class="ld">인터넷 너머로 컴퓨터·서비스를 빌려주는 분야</div></div>
         <div class="arr">▾</div>
-        <div class="layer L4">
-          <div class="lt">🧬 가상화 (Virtualization)</div>
-          <div class="ld">진짜 컴퓨터 한 대를 쪼개 여러 대처럼 '흉내' 내는 기술</div>
-        </div>
+        <div class="layer L4"><div class="lt">🧬 가상화 (Virtualization)</div><div class="ld">컴퓨터 한 대를 여러 명이 '각자 자기 것'처럼 나눠 쓰게 쪼개는 기술</div></div>
         <div class="arr">▾</div>
-        <div class="layer L5">
-          <div class="lt">⚙️ 컴퓨팅<span class="me">바로 여기, 나!</span></div>
-          <div class="ld">그 가상 컴퓨터를 <b>만들고·켜고·끄고·돌보는</b> 핵심 엔진</div>
-        </div>
+        <div class="layer L5"><div class="lt">⚙️ 컴퓨팅 <span class="me">바로 여기, 나!</span></div><div class="ld">그 가상 컴퓨터를 <b>만들고·켜고·끄고·돌보는</b> 핵심 엔진</div></div>
       </div>
 
-      <p class="lead" style="margin-top:22px">쉽게 말하면 — <span class="em">인터넷 속에 '진짜 같은 컴퓨터'를 만들어주는</span> 가장 안쪽 엔진을 다뤄.</p>
-
-      <div class="panel tint-blue" style="margin-top:16px">
-        <svg width="220" height="130" viewBox="0 0 220 130" fill="none">
-          <rect x="58" y="20" width="104" height="78" rx="10" fill="#e6f3fb" stroke="#7ec4e8" stroke-width="3"/>
-          <rect x="72" y="34" width="76" height="44" rx="5" fill="#fff" stroke="#7ec4e8" stroke-width="2.5"/>
-          <circle cx="110" cy="56" r="11" fill="#ffd28a"/>
-          <rect x="92" y="100" width="36" height="7" rx="3.5" fill="#7ec4e8"/>
-          <rect x="80" y="107" width="60" height="7" rx="3.5" fill="#bfe2f4"/>
-          <g stroke="#ff8a7a" stroke-width="3" stroke-linecap="round">
-            <path d="M30 30 q-12 14 0 28"/><path d="M40 38 q-5 6 0 12"/>
-            <path d="M190 30 q12 14 0 28"/><path d="M180 38 q5 6 0 12"/>
-          </g>
-        </svg>
-        <div class="big">비유하자면 '컴퓨터 호텔'이야</div>
-        <div class="sub">클라우드는 컴퓨터를 빌려주는 <b>거대한 호텔</b>.
-        그 안에서 손님이 "컴퓨터 한 대 주세요!" 하면<br>
-        즉석에서 방(가상 컴퓨터)을 뚝딱 지어주는 <b>설비</b> — 그게 내가 만드는 '컴퓨팅 엔진'이야.</div>
+      <div class="panel tint-blue" style="margin-top:22px">
+        <div class="big">☁️ '클라우드'가 뭐냐면 — 전기 같은 거야 🔌</div>
+        <div class="sub">예전엔 집집마다 발전기를 뒀지만, 지금은 콘센트에 꽂아 전기를 쓰지?<br>
+        컴퓨터도 똑같아. 필요할 때 인터넷에 '꽂아서' 빌려 쓰는 거야.<br>
+        나는 그 전기를 만드는 <b>발전소 — 컴퓨터 공장</b>을 짓는 사람이야.</div>
       </div>
-      <p class="lead muted" style="margin-top:16px">
-      네가 쓰는 앱·게임·은행 서비스 대부분이 이런 '빌린 컴퓨터' 위에서 돌아가.
-      나는 그 컴퓨터를 <span class="em">자동으로 만들어주는 설비</span>를 만드는 사람이야.</p>
+      <p class="lead muted" style="margin-top:16px">네가 보는 <b>넷플릭스·인스타·은행앱</b> 거의 전부가 이런 '빌린 컴퓨터' 위에서 돌아가.
+      즉 내가 만든 게 멈추면 — <span class="em">그것들도 멈춰</span>. 그래서 책임이 꽤 무거운 일이야.</p>
     </section>
 
-    <!-- 3. 실제 한 일 -->
+    <!-- 3. INTERACTIVE DEMO -->
     <section class="reveal">
-      <div class="step"><span class="dot">3</span> 내가 실제로 만든 것들</div>
-      <h2>버튼 한 번 = 컴퓨터 한 대.<br>그 <span class="em">마법의 뒤편</span>을 내가 만들어</h2>
-      <p class="lead muted" style="margin-bottom:18px">조금씩 다른 일들이지만, 전부 "컴퓨터를 잘 만들고·잘 돌보는" 일이야.</p>
+      <div class="step"><span class="dot">3</span> 백문이 불여일견</div>
+      <h2><span class="em">버튼 한 번 = 컴퓨터 한 대.</span><br>직접 눌러봐 👇</h2>
+      <p class="lead muted" style="margin-bottom:16px">사람들이 "컴퓨터 한 대 주세요" 하고 버튼을 누르면, 내가 만든 시스템이 뒤에서 이걸 자동으로 해:</p>
+      <div class="demo">
+        <div class="scr-head"><i class="r"></i><i class="y"></i><i class="g"></i><span>cloud-console</span></div>
+        <button class="btn" id="makeBtn">▶  컴퓨터 한 대 만들기</button>
+        <ul class="steps" id="steps">
+          <li data-t="📨"><span class="mk">·</span> 요청 받았어요</li>
+          <li data-t="🏠"><span class="mk">·</span> 빈 자리(서버)를 찾는 중…</li>
+          <li data-t="💿"><span class="mk">·</span> 운영체제(OS)를 설치하는 중…</li>
+          <li data-t="🪪"><span class="mk">·</span> 이름·암호·설정을 입혀주는 중…</li>
+          <li data-t="🌐"><span class="mk">·</span> 인터넷에 연결하는 중…</li>
+          <li data-t="🔑"><span class="mk">·</span> 보안(암호화) 적용하는 중…</li>
+        </ul>
+        <div class="final" id="final">✅ 컴퓨터 준비 완료! &nbsp;방금 0.0초 만에 한 대가 태어났어 🎉</div>
+        <div class="cap">…이 모든 흐름을 0에서부터 직접 설계하고 만든 게 내 일이야.</div>
+      </div>
+    </section>
+
+    <!-- 4. 실제 만든 것 -->
+    <section class="reveal">
+      <div class="step"><span class="dot">4</span> 내가 실제로 만든 것들</div>
+      <h2>전부 "컴퓨터를 <span class="em">잘 만들고·잘 돌보는</span>" 일이야</h2>
       <div class="grid">
-        <div class="card">
-          <div class="ic">🏭</div>
-          <h3>컴퓨터 출생 공장 짓기</h3>
-          <p>아무것도 없던 상태에서, 컴퓨터를 자동으로 찍어내는 공장 라인을 <b>처음부터 끝까지</b> 만들었어.</p>
-          <span class="tag">0 → 1 직접 설계</span>
-        </div>
-        <div class="card">
-          <div class="ic">👶</div>
-          <h3>갓 태어난 컴퓨터에 옷 입히기</h3>
-          <p>막 만들어진 컴퓨터에 이름·암호·설정을 자동으로 입혀줘. 종류가 다른 컴퓨터 <b>4가지</b>를 다 챙겼어.</p>
-          <span class="tag">4종 OS 지원</span>
-        </div>
-        <div class="card">
+        <div class="card"><div class="ic">🏭</div><h3>컴퓨터 출생 공장 짓기</h3><p>아무것도 없던 상태에서, 컴퓨터를 자동으로 찍어내는 공장 라인을 <b>처음부터 끝까지</b> 만들었어.</p><span class="tag">0 → 1 직접 설계</span></div>
+        <div class="card"><div class="ic">🪪</div><h3>갓 태어난 컴퓨터 세팅</h3><p>막 만들어진 컴퓨터에 이름·암호·설정을 자동으로 입혀줘. 종류가 다른 컴퓨터 <b>4가지</b>를 다 챙겼어.</p><span class="tag">4종 OS 지원</span></div>
+        <div class="card"><div class="ic">🔌</div><h3>켜둔 채로 부품 끼우기</h3><p>컴퓨터를 끄지 않고도 메모리·저장공간을 더 꽂아줘. 달리는 차의 바퀴를 안 세우고 가는 셈이야.</p><span class="tag">무중단 업그레이드</span></div>
+        <div class="card"><div class="ic">🔐</div><h3>아무도 못 훔쳐보는 금고</h3><p>컴퓨터 속 내용을 통째로 암호화해서, 주인 말곤 누구도 못 들여다보게 하는 보안 기능을 넣었어.</p><span class="tag">메모리 암호화</span></div>
+        <div class="card"><div class="ic">🛟</div><h3>고장 나도 안 멈추게</h3><p>서버 한 대가 갑자기 뻗어도, 그 위 컴퓨터들을 살려서 옮기는 안전망을 만들었어. (이게 내가 가끔 늦는 이유…😅)</p><span class="tag">장애 대응·복구</span></div>
+        <div class="card"><div class="ic">🤖</div><h3>AI한테 내 잡일 시키기</h3><p>반복되는 귀찮은 작업을 AI가 대신 하도록 <b>나만의 도구</b>를 직접 만들어서 일에 바로 써먹었어.</p><span class="tag">자작 AI 도구</span></div>
+
+        <!-- live migration animation -->
+        <div class="card mig">
           <div class="ic">🚚</div>
-          <h3>끄지 않고 '이사'시키기</h3>
-          <p>돌아가는 컴퓨터를 멈추지 않고 다른 자리로 옮기는 기술. 멈추는 시간을 <b>20초 → 1~2초</b>로 줄였어.</p>
-          <span class="tag">약 10배 빨라짐</span>
-        </div>
-        <div class="card">
-          <div class="ic">🔌</div>
-          <h3>켜둔 채로 부품 끼우기</h3>
-          <p>컴퓨터를 끄지 않고도 메모리·저장공간을 더 꽂아줄 수 있게 만들었어. 마치 달리는 차 바퀴 교체 같은 거.</p>
-          <span class="tag">무중단 업그레이드</span>
-        </div>
-        <div class="card">
-          <div class="ic">🔐</div>
-          <h3>아무도 못 훔쳐보는 금고 컴퓨터</h3>
-          <p>컴퓨터 속 내용을 통째로 암호화해서, 주인 말곤 누구도 못 들여다보게 하는 보안 기능을 넣었어.</p>
-          <span class="tag">메모리 암호화</span>
-        </div>
-        <div class="card">
-          <div class="ic">🤖</div>
-          <h3>AI한테 내 잡일 시키기</h3>
-          <p>반복되는 귀찮은 작업을 AI가 대신 하도록 <b>나만의 도구</b>를 직접 만들어서 일에 바로 써먹었어.</p>
-          <span class="tag">자작 AI 도구</span>
+          <h3>끄지 않고 '이사'시키기 — 내가 제일 자랑하고 싶은 거</h3>
+          <p style="margin-bottom:6px">돌아가는 컴퓨터를 <b>멈추지 않고</b> 다른 자리로 옮기는 기술. 너가 영상 끊기지 않게 편집하듯, 나는 서비스가 안 끊기게 옮겨.</p>
+          <div class="stage">
+            <div class="srv srvA">🖥️<small>서버 A</small></div>
+            <div class="srv srvB">🖥️<small>서버 B</small></div>
+            <div class="vm">📦</div>
+          </div>
+          <div class="nolabel">⚡ 켜진 채로 이동 — 멈추는 시간을 20초 → 1~2초로 (약 10배 단축)</div>
         </div>
       </div>
     </section>
 
-    <!-- 4. 숫자 -->
+    <!-- 5. 숫자 -->
     <section class="reveal">
-      <div class="step"><span class="dot">4</span> 숫자로 보는 나</div>
+      <div class="step"><span class="dot">5</span> 숫자로 보는 나</div>
       <h2>꾸준함은 좀 자신 있어 😌</h2>
       <div class="stats">
-        <div class="stat"><div class="n">3,500+</div><div class="l">남긴 작업 기록<br>(약 14개월간)</div></div>
-        <div class="stat"><div class="n">490+</div><div class="l">직접 새로 만든<br>코드 파일</div></div>
-        <div class="stat"><div class="n">월 250</div><div class="l">평균 작업 건수<br>(팀 내 최다)</div></div>
+        <div class="stat"><div class="n" data-count="3519" data-comma="1">0</div><div class="l">남긴 작업 기록<br>(약 14개월간)</div></div>
+        <div class="stat"><div class="n" data-count="493">0</div><div class="l">직접 새로 만든<br>코드 파일</div></div>
+        <div class="stat"><div class="n" data-count="10" data-suffix="배">0</div><div class="l">이사 속도<br>빨라진 정도</div></div>
       </div>
       <p class="lead muted" style="margin-top:16px">숫자가 다는 아니지만, 그만큼 <span class="em">매일 빠지지 않고</span> 뭔가를 만들고 고쳐왔다는 뜻이야.</p>
     </section>
 
-    <!-- 5. 거쳐온 곳 -->
+    <!-- 6. 지금 하는 일 -->
     <section class="reveal">
-      <div class="step"><span class="dot">5</span> 내가 거쳐온 길</div>
-      <h2>쭉 <span class="em">'클라우드'</span> 한 길을 걸어왔어</h2>
-      <div class="tl">
-        <div class="it">
-          <div class="yr">2017 – 2023</div>
-          <div class="ti">숭실대학교 소프트웨어학부 🎓</div>
-          <div class="de">여기서 개발의 기초를 닦았어.</div>
-        </div>
-        <div class="it">
-          <div class="yr">2023 – 2024 · TmaxCloud</div>
-          <div class="ti">연구원 — 클라우드 컴퓨터 시스템 개발</div>
-          <div class="de">'인터넷 속 컴퓨터'를 만드는 일을 본격적으로 시작했어.</div>
-        </div>
-        <div class="it">
-          <div class="yr">2025 – 지금 · 아이에이클라우드</div>
-          <div class="ti">전임 개발자 — 클라우드 제품 핵심 엔진</div>
-          <div class="de">우리 회사 클라우드 제품의 <b>심장부</b>를 만들고 있어. 지금 이 글의 거의 모든 이야기가 여기서 한 일이야.</div>
-        </div>
+      <div class="step"><span class="dot">6</span> 지금 내가 있는 곳</div>
+      <h2>클라우드 제품의 <span class="em">'심장부'</span>를 만들고 있어</h2>
+      <div class="panel tint-pink">
+        <div class="big">🏢 아이에이클라우드 · 백엔드 개발자</div>
+        <div class="sub">우리 회사가 만드는 클라우드 제품에서, <b>컴퓨터를 만들어내는 핵심 엔진</b>을 맡고 있어.<br>
+        위에서 보여준 이야기 — 공장 짓기·무중단 이사·보안 금고 — 거의 전부가 <b>지금 여기서</b> 하는 일이야.</div>
       </div>
     </section>
 
-    <!-- 6. 배움 -->
+    <!-- 7. 우리 닮았어 -->
     <section class="reveal">
-      <div class="step"><span class="dot">6</span> 그리고 나는</div>
-      <h2>계속 <span class="em">배우는 사람</span>이고 싶어</h2>
-      <p class="lead">기술은 정말 빨리 변해서, 멈추면 뒤처져.
-      그래서 두꺼운 전공 책도 꾸준히 읽고, 요즘 핫한 <b>AI</b>도 깊게 공부하고 있어.
-      <span class="em">더 좋은 걸 만들려고</span> — 그게 내가 일을 대하는 방식이야.</p>
+      <div class="step"><span class="dot">7</span> 그리고 사실은</div>
+      <h2>맑음이랑 나랑, <span class="em">하는 일이 닮았어</span> 💛</h2>
+      <div class="twin">
+        <div class="row"><div class="you">기획<small>어떤 강연을 만들까</small></div><div class="mid">≈</div><div class="me2">설계<small>어떤 시스템을 만들까</small></div></div>
+        <div class="row"><div class="you">촬영<small>현장을 담는다</small></div><div class="mid">≈</div><div class="me2">개발<small>실제로 만든다</small></div></div>
+        <div class="row"><div class="you">편집<small>거칠던 걸 다듬는다</small></div><div class="mid">≈</div><div class="me2">디버깅·최적화<small>오류를 고치고 빠르게</small></div></div>
+        <div class="row"><div class="you">무대 뒤<small>관객은 못 보지만 핵심</small></div><div class="mid">≈</div><div class="me2">백엔드<small>사용자는 못 보지만 핵심</small></div></div>
+        <div class="punch">맑음은 <b>작가님의 이야기</b>가 잘 전해지게 뒤에서 만들고,<br>나는 <b>사람들의 서비스</b>가 잘 돌아가게 뒤에서 만들어.<br>둘 다 — <span class="em">누군가 즐기는 것의 '뒤편'을 짓는 사람</span>이야.</div>
+      </div>
     </section>
 
-    <!-- OUTRO -->
+    <!-- 8. 미래 -->
+    <section class="reveal">
+      <div class="step"><span class="dot">8</span> 앞으로의 나</div>
+      <h2>계속 <span class="em">더 좋은 걸 만들고 싶어</span></h2>
+      <p class="lead">기술은 정말 빨리 변해서, 멈추면 뒤처져. 그래서 두꺼운 전공 책도 꾸준히 읽고, 요즘 핫한 <b>AI</b>도 깊게 공부하고 있어.
+      더 단단하고, 더 빠르고, 더 안전한 걸 만드는 사람 — 그게 내가 되고 싶은 모습이야.</p>
+    </section>
+
     <section class="reveal">
       <div class="outro">
         <div class="heart">💛</div>
         <h2>요약하면</h2>
-        <p>나는 <b>눈에는 안 보이지만</b>, 수많은 사람이 쓰는
-        <span class="em">'인터넷 속 컴퓨터'</span>를 만들고 돌보는 사람이야.<br><br>
-        화려하진 않아도, 누군가의 서비스가 잘 돌아가게 받쳐주는 일.<br>
-        나는 이 일이 꽤 마음에 들어. 이제 내가 뭐 하는지 조금 알겠지? 😊</p>
+        <p>나는 <b>눈에는 안 보이지만</b>, 수많은 사람이 쓰는 <span class="em">'인터넷 속 컴퓨터'</span>를 만들고 돌보는 사람이야.<br><br>
+        맑음처럼 — 화려한 무대 위가 아니라 그 <b>뒤편</b>에서.<br>
+        이제 내가 뭐 하는지 조금 알겠지? 😊<br><br>
+        <b>— 너의 시베리아호랑이가 🐯💛</b></p>
       </div>
     </section>
 
   </main>
 
-  <footer>made with 💛 — 내가 하는 일 이야기</footer>
+  <footer>🐯 시베리아호랑이가 맑음에게 — made with 💛</footer>
 
   <script>
-    const io=new IntersectionObserver((es)=>{
-      es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
-    },{threshold:.14});
+    // scroll reveal
+    const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // count-up
+    function animateCount(el){
+      const target=+el.dataset.count, comma=el.dataset.comma, suffix=el.dataset.suffix||'';
+      const dur=1400, t0=performance.now();
+      function tick(now){
+        const p=Math.min((now-t0)/dur,1), eased=1-Math.pow(1-p,3);
+        let v=Math.round(target*eased);
+        el.textContent=(comma?v.toLocaleString():v)+suffix;
+        if(p<1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const co=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);co.unobserve(e.target)}})},{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+    // VM provisioning demo
+    const btn=document.getElementById('makeBtn'),
+          items=[...document.querySelectorAll('#steps li')],
+          finalEl=document.getElementById('final');
+    let running=false;
+    btn.addEventListener('click',()=>{
+      if(running) return; running=true;
+      btn.disabled=true; finalEl.classList.remove('show');
+      items.forEach(li=>{li.className='';li.querySelector('.mk').textContent='·';});
+      const t0=performance.now();
+      let i=0;
+      function next(){
+        if(i>0){const prev=items[i-1];prev.classList.remove('run');prev.classList.add('done');prev.querySelector('.mk').textContent=prev.dataset.t;}
+        if(i<items.length){
+          const li=items[i];li.classList.add('show','run');li.querySelector('.mk').textContent='◴';
+          i++; setTimeout(next, 620);
+        } else {
+          const secs=((performance.now()-t0)/1000).toFixed(1);
+          finalEl.innerHTML='✅ 컴퓨터 준비 완료! &nbsp;방금 '+secs+'초 만에 한 대가 태어났어 🎉';
+          finalEl.classList.add('show');
+          btn.disabled=false; btn.textContent='▶  다시 만들어보기'; running=false;
+        }
+      }
+      next();
+    });
   </script>
 </body>
 </html>
