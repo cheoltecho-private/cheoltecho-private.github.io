@@ -535,7 +535,7 @@
           termPrint('[ <span class="ok">완료</span> ] 부팅 끝 — <b>'+secs+'초</b> 만에 살아났어 🎉');
           termPrint('&nbsp;');
           termPrint('방금 태어난 진짜 같은 가상 컴퓨터야. 명령어 한번 쳐봐 👇');
-          termPrint('(<span class="em2">help</span> · <span class="em2">whoami</span> · <span class="em2">ls</span> · <span class="em2">사랑해</span>)');
+          termPrint('(<span class="em2">help</span> · <span class="em2">whoami</span> · <span class="em2">ls</span> · <span class="em2">sudo</span>)');
         }
       })();
     }
@@ -543,15 +543,13 @@
     const termIn=document.getElementById('termIn');
     const esc=(s)=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
     const cmds={
-      'help':()=>'명령어:  <span class="em2">whoami · ls · cat &lt;파일&gt; · date · 사랑해 · sudo · clear</span>',
+      'help':()=>'명령어:  <span class="em2">whoami · ls · cat &lt;파일&gt; · date · sudo · clear</span>',
       'whoami':()=>'<span class="usr">맑음</span> — 이 시스템 최고 관리자 (root보다 위 🐯)',
-      'ls':()=>'사랑해.txt   우리_여행.txt   <span class="em2">시베리아호랑이의_마음.txt</span>',
-      'cat 사랑해.txt':()=>'❤️ × 무한 — 디스크 용량 초과',
-      'cat 우리_여행.txt':()=>'TODO: 다음 여행지 정하기  (담당자: 시베리아호랑이)',
-      'cat 시베리아호랑이의_마음.txt':()=>'Permission denied 🔒 — 부끄러우니까 직접 물어보세요',
+      'ls':()=>'여행계획.txt   할일.txt   <span class="em2">업무일지.txt</span>',
+      'cat 여행계획.txt':()=>'TODO: 다음 여행지 정하기  (담당자: 시베리아호랑이)',
+      'cat 할일.txt':()=>'1. 맑음한테 일 설명하기 … <span class="ok">완료 ✅</span><br>2. (나머지는 비밀)',
+      'cat 업무일지.txt':()=>'오늘도 컴퓨터를 만들었다. 잘 돌아간다. 끝. 🐯',
       'date':()=>new Date().toLocaleDateString('ko-KR',{year:'numeric',month:'long',day:'numeric',weekday:'long'}),
-      '사랑해':()=>'<span class="ok">200 OK</span> ❤️',
-      'love':()=>'<span class="ok">200 OK</span> ❤️',
       'sudo':()=>'맑음 is already in the sudoers file. 😏',
       '시베리아호랑이':()=>'🐯 ping… 어흥! (응답시간 1ms)',
       'clear':()=>{termBody.innerHTML='';return null;}
